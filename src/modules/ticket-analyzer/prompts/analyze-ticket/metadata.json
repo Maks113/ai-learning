@@ -1,0 +1,7 @@
+{
+  "name": "ticket_analysis",
+  "version": "1.0.0",
+  "description": "Analyze support ticket and return structured classification.",
+  "schemaName": "ticket_analysis",
+  "maxTokens": 5120
+}

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "category",
+    "priority",
+    "summary",
+    "language",
+    "requiresHuman"
+  ],
+  "properties": {
+    "category": {
+      "type": "string",
+      "enum": ["general", "billing", "technical", "account", "other"]
+    },
+    "priority": {
+      "type": "string",
+      "enum": ["low", "medium", "high", "critical"]
+    },
+    "summary": {
+      "type": "string"
+    },
+    "language": {
+      "type": "string"
+    },
+    "requiresHuman": {
+      "type": "boolean"
+    }
+  }
+}

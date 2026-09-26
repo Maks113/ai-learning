@@ -1,0 +1,83 @@
+@startuml
+title AI Learning - code modules
+
+skinparam packageStyle rectangle
+skinparam componentStyle rectangle
+
+package "App" {
+  [AppModule]
+}
+
+package "Common" {
+  [CommonModule]
+  [EnvConfigModule]
+  [LLM_PROVIDER token]
+  [LlmProvider interface]
+}
+
+package "UI Module" {
+  [UiModule]
+  [UiController]
+}
+
+package "API Module" {
+  [ApiModule]
+  [TicketsController]
+  [AnalyzeTicketDto]
+}
+
+package "Ticket Analyzer Module" {
+  [TicketAnalyzerModule]
+  [TicketAnalyzerService]
+  [PromptRegistryService]
+  [PromptOutputValidatorService]
+  folder "prompts/analyze-ticket" {
+    [prompt.md]
+    [schema.json]
+    [metadata.json]
+  }
+}
+
+package "LLM Provider Module" {
+  [LlmProviderModule]
+}
+
+package "Infrastructure" {
+  [LlmModule]
+  [LocalLlmService]
+  [OpenaiLlmService]
+}
+
+[AppModule] --> [CommonModule]
+[AppModule] --> [ApiModule]
+[AppModule] --> [UiModule]
+[AppModule] --> [LlmModule]
+
+[CommonModule] --> [EnvConfigModule]
+[LlmModule] --> [LlmProviderModule]
+
+[ApiModule] --> [TicketsController]
+[ApiModule] --> [TicketAnalyzerModule]
+[ApiModule] --> [LlmProviderModule]
+
+[TicketsController] --> [TicketAnalyzerService] : structured analyze
+[TicketsController] --> [LLM_PROVIDER token] : raw generate
+
+[TicketAnalyzerModule] --> [LlmProviderModule]
+[TicketAnalyzerService] --> [LLM_PROVIDER token]
+[TicketAnalyzerService] --> [PromptRegistryService]
+[TicketAnalyzerService] --> [PromptOutputValidatorService]
+[PromptRegistryService] --> [prompt.md]
+[PromptRegistryService] --> [schema.json]
+[PromptRegistryService] --> [metadata.json]
+
+[LlmProviderModule] --> [EnvConfigModule] : reads LLM_PROVIDER
+[LlmProviderModule] ..> [LocalLlmService] : creates if local
+[LlmProviderModule] ..> [OpenaiLlmService] : creates if openai
+[LocalLlmService] ..|> [LlmProvider interface]
+[OpenaiLlmService] ..|> [LlmProvider interface]
+[LLM_PROVIDER token] --> [LlmProvider interface]
+
+[UiController] --> [TicketsController] : browser fetch
+
+@enduml

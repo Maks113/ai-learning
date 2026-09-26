@@ -1,0 +1,778 @@
+{
+  "generatedAt": "2026-09-24T13:30:38.918Z",
+  "endpoint": "http://localhost:3001/tickets/analyze",
+  "model": "Qwen/Qwen3-4B-MLX-6bit-thinking",
+  "source": "/Users/Maks113/WebstormProjects/ai-learning/docs/support-ticket-test-phrases.md",
+  "total": 50,
+  "successful": 49,
+  "failed": 1,
+  "averageLatencyMs": 12818,
+  "results": [
+    {
+      "id": 1,
+      "phrase": "Не могу войти в аккаунт после смены телефона. Код подтверждения приходит на старый номер.",
+      "expectedArea": "authentication",
+      "ok": true,
+      "status": 201,
+      "latencyMs": 21435,
+      "response": {
+        "language": "ru",
+        "category": "account",
+        "priority": "high",
+        "summary": "Не могу войти в аккаунт после смены телефона. Код приходит на старый номер.",
+        "requiresHuman": true
+      }
+    },
+    {
+      "id": 2,
+      "phrase": "Забыл пароль, а письмо для восстановления не приходит уже 20 минут.",
+      "expectedArea": "authentication",
+      "ok": true,
+      "status": 201,
+      "latencyMs": 14411,
+      "response": {
+        "language": "ru",
+        "category": "account",
+        "priority": "medium",
+        "summary": "Забыл пароль, письмо для восстановления не приходит 20 минут",
+        "requiresHuman": true
+      }
+    },
+    {
+      "id": 3,
+      "phrase": "При входе пишет \"invalid credentials\", хотя пароль точно правильный.",
+      "expectedArea": "authentication",
+      "ok": true,
+      "status": 201,
+      "latencyMs": 9514,
+      "response": {
+        "language": "ru",
+        "category": "technical",
+        "priority": "high",
+        "summary": "Login fails with 'invalid credentials' despite correct password",
+        "requiresHuman": true
+      }
+    },
+    {
+      "id": 4,
+      "phrase": "Аккаунт заблокирован после нескольких попыток входа. Нужно срочно восстановить доступ.",
+      "expectedArea": "authentication",
+      "ok": true,
+      "status": 201,
+      "latencyMs": 5925,
+      "response": {
+        "language": "ru",
+        "category": "account",
+        "priority": "critical",
+        "summary": "Account locked after multiple login attempts. Immediate access needed.",
+        "requiresHuman": true
+      }
+    },
+    {
+      "id": 5,
+      "phrase": "I cannot log in because the 2FA code never arrives on my phone.",
+      "expectedArea": "authentication",
+      "ok": true,
+      "status": 201,
+      "latencyMs": 11011,
+      "response": {
+        "language": "en",
+        "category": "technical",
+        "priority": "critical",
+        "summary": "2FA code not arriving on phone prevents login",
+        "requiresHuman": true
+      }
+    },
+    {
+      "id": 6,
+      "phrase": "После обновления приложения меня разлогинило, а повторный вход зависает на белом экране.",
+      "expectedArea": "authentication",
+      "ok": true,
+      "status": 201,
+      "latencyMs": 12019,
+      "response": {
+        "language": "ru",
+        "category": "technical",
+        "priority": "critical",
+        "summary": "После обновления приложения разлогинилось и зависает на белом экране",
+        "requiresHuman": true
+      }
+    },
+    {
+      "id": 7,
+      "phrase": "У меня новый email, но подтвердить его не получается: ссылка из письма уже истекла.",
+      "expectedArea": "authentication",
+      "ok": true,
+      "status": 201,
+      "latencyMs": 15913,
+      "response": {
+        "language": "ru",
+        "category": "account",
+        "priority": "high",
+        "summary": "New email verification failed: confirmation link expired",
+        "requiresHuman": true
+      }
+    },
+    {
+      "id": 8,
+      "phrase": "Кто-то вошел в мой аккаунт без разрешения. Срочно заблокируйте доступ.",
+      "expectedArea": "authentication",
+      "ok": true,
+      "status": 201,
+      "latencyMs": 6872,
+      "response": {
+        "language": "ru",
+        "category": "account",
+        "priority": "high",
+        "summary": "Unauthorized access to account. Request immediate block.",
+        "requiresHuman": true
+      }
+    },
+    {
+      "id": 9,
+      "phrase": "Не могу удалить старое устройство из списка доверенных устройств.",
+      "expectedArea": "authentication",
+      "ok": true,
+      "status": 201,
+      "latencyMs": 8243,
+      "response": {
+        "language": "ru",
+        "category": "technical",
+        "priority": "medium",
+        "summary": "Не могу удалить старое устройство из доверенных.",
+        "requiresHuman": true
+      }
+    },
+    {
+      "id": 10,
+      "phrase": "Password reset link opens an error page saying the token is invalid.",
+      "expectedArea": "authentication",
+      "ok": true,
+      "status": 201,
+      "latencyMs": 12976,
+      "response": {
+        "language": "en",
+        "category": "account",
+        "priority": "high",
+        "summary": "Password reset link shows invalid token error",
+        "requiresHuman": true
+      }
+    },
+    {
+      "id": 11,
+      "phrase": "С карты списали деньги два раза за одну подписку. Верните лишний платеж.",
+      "expectedArea": "billing",
+      "ok": true,
+      "status": 201,
+      "latencyMs": 5815,
+      "response": {
+        "language": "ru",
+        "category": "billing",
+        "priority": "high",
+        "summary": "Refund for double charge on subscription",
+        "requiresHuman": true
+      }
+    },
+    {
+      "id": 12,
+      "phrase": "Оплатил тариф Pro, но в кабинете все еще отображается бесплатный план.",
+      "expectedArea": "billing",
+      "ok": true,
+      "status": 201,
+      "latencyMs": 9531,
+      "response": {
+        "language": "ru",
+        "category": "account",
+        "priority": "high",
+        "summary": "Paid for Pro plan, but account still shows free plan",
+        "requiresHuman": true
+      }
+    },
+    {
+      "id": 13,
+      "phrase": "Не получается привязать карту: форма оплаты возвращает ошибку без пояснения.",
+      "expectedArea": "billing",
+      "ok": true,
+      "status": 201,
+      "latencyMs": 10077,
+      "response": {
+        "language": "ru",
+        "category": "technical",
+        "priority": "medium",
+        "requiresHuman": true,
+        "summary": "Ошибка при привязке карты: форма оплаты возвращает ошибку без пояснения."
+      }
+    },
+    {
+      "id": 14,
+      "phrase": "Нужен счет для бухгалтерии за оплату подписки в этом месяце.",
+      "expectedArea": "billing",
+      "ok": true,
+      "status": 201,
+      "latencyMs": 10401,
+      "response": {
+        "language": "ru",
+        "category": "billing",
+        "priority": "medium",
+        "summary": "Invoice for subscription payment this month",
+        "requiresHuman": false
+      }
+    },
+    {
+      "id": 15,
+      "phrase": "I cancelled my subscription yesterday, but I was charged again today.",
+      "expectedArea": "billing",
+      "ok": true,
+      "status": 201,
+      "latencyMs": 8074,
+      "response": {
+        "language": "en",
+        "category": "billing",
+        "priority": "high",
+        "summary": "Subscription cancelled, charged again today",
+        "requiresHuman": true
+      }
+    },
+    {
+      "id": 16,
+      "phrase": "Промокод применился, но скидка в итоговой сумме не появилась.",
+      "expectedArea": "billing",
+      "ok": true,
+      "status": 201,
+      "latencyMs": 8662,
+      "response": {
+        "language": "ru",
+        "category": "billing",
+        "priority": "medium",
+        "summary": "Промокод применился, но скидка не появилась",
+        "requiresHuman": true
+      }
+    },
+    {
+      "id": 17,
+      "phrase": "Не могу скачать закрывающие документы за прошлый квартал.",
+      "expectedArea": "billing",
+      "ok": true,
+      "status": 201,
+      "latencyMs": 9286,
+      "response": {
+        "language": "ru",
+        "category": "technical",
+        "priority": "medium",
+        "summary": "Не могу скачать закрывающие документы за прошлый квартал",
+        "requiresHuman": true
+      }
+    },
+    {
+      "id": 18,
+      "phrase": "После смены тарифа списалась полная сумма, хотя обещали перерасчет.",
+      "expectedArea": "billing",
+      "ok": true,
+      "status": 201,
+      "latencyMs": 10392,
+      "response": {
+        "language": "ru",
+        "category": "billing",
+        "priority": "high",
+        "summary": "После смены тарифа списана полная сумма, хотя обещали перерасчет",
+        "requiresHuman": true
+      }
+    },
+    {
+      "id": 19,
+      "phrase": "Payment failed, but the money is reserved on my bank account.",
+      "expectedArea": "billing",
+      "ok": true,
+      "status": 201,
+      "latencyMs": 8751,
+      "response": {
+        "language": "en",
+        "category": "billing",
+        "priority": "high",
+        "summary": "Payment failed but funds reserved on bank account",
+        "requiresHuman": true
+      }
+    },
+    {
+      "id": 20,
+      "phrase": "Хочу узнать, почему стоимость продления стала выше без уведомления.",
+      "expectedArea": "billing",
+      "ok": true,
+      "status": 201,
+      "latencyMs": 8266,
+      "response": {
+        "language": "ru",
+        "category": "billing",
+        "priority": "high",
+        "summary": "Extension cost increased without notice",
+        "requiresHuman": true
+      }
+    },
+    {
+      "id": 21,
+      "phrase": "Приложение падает при загрузке файла больше 10 МБ.",
+      "expectedArea": "technical",
+      "ok": true,
+      "status": 201,
+      "latencyMs": 22810,
+      "response": {
+        "language": "ru",
+        "category": "technical",
+        "priority": "critical",
+        "summary": "App crashes when loading files larger than 10 MB",
+        "requiresHuman": true
+      }
+    },
+    {
+      "id": 22,
+      "phrase": "API возвращает 500 на запрос создания тикета, хотя payload соответствует документации.",
+      "expectedArea": "technical",
+      "ok": true,
+      "status": 201,
+      "latencyMs": 7152,
+      "response": {
+        "language": "ru",
+        "category": "technical",
+        "priority": "high",
+        "summary": "API returns 500 on ticket creation, payload matches documentation",
+        "requiresHuman": true
+      }
+    },
+    {
+      "id": 23,
+      "phrase": "Страница отчетов открывается очень медленно и иногда показывает пустой список.",
+      "expectedArea": "technical",
+      "ok": true,
+      "status": 201,
+      "latencyMs": 9555,
+      "response": {
+        "language": "ru",
+        "category": "technical",
+        "priority": "high",
+        "summary": "Страница отчетов открывается медленно и иногда показывает пустой список",
+        "requiresHuman": true
+      }
+    },
+    {
+      "id": 24,
+      "phrase": "После последнего релиза кнопка \"Сохранить\" перестала работать в Safari.",
+      "expectedArea": "technical",
+      "ok": true,
+      "status": 201,
+      "latencyMs": 6707,
+      "response": {
+        "language": "ru",
+        "category": "technical",
+        "priority": "high",
+        "summary": "Save button stopped working in Safari after latest release",
+        "requiresHuman": true
+      }
+    },
+    {
+      "id": 25,
+      "phrase": "Webhook is delivered with a 30-minute delay and breaks our integration.",
+      "expectedArea": "technical",
+      "ok": true,
+      "status": 201,
+      "latencyMs": 16557,
+      "response": {
+        "language": "en",
+        "category": "technical",
+        "priority": "critical",
+        "summary": "Webhook delay of 30 minutes breaks integration",
+        "requiresHuman": true
+      }
+    },
+    {
+      "id": 26,
+      "phrase": "В мобильном приложении не отображаются вложения, хотя в веб-версии они есть.",
+      "expectedArea": "technical",
+      "ok": true,
+      "status": 201,
+      "latencyMs": 21456,
+      "response": {
+        "language": "ru",
+        "category": "technical",
+        "priority": "medium",
+        "summary": "Mobile app doesn't display attachments, while they are visible in web version.",
+        "requiresHuman": false
+      }
+    },
+    {
+      "id": 27,
+      "phrase": "Экспорт CSV содержит неправильную кодировку, русские символы превращаются в вопросительные знаки.",
+      "expectedArea": "technical",
+      "ok": true,
+      "status": 201,
+      "latencyMs": 26504,
+      "response": {
+        "language": "ru",
+        "category": "technical",
+        "priority": "medium",
+        "summary": "CSV export has incorrect encoding, Russian characters displayed as question marks.",
+        "requiresHuman": false
+      }
+    },
+    {
+      "id": 28,
+      "phrase": "При попытке загрузить аватар получаю ошибку \"unsupported file type\" для обычного PNG.",
+      "expectedArea": "technical",
+      "ok": true,
+      "status": 201,
+      "latencyMs": 7732,
+      "response": {
+        "language": "ru",
+        "category": "technical",
+        "priority": "medium",
+        "summary": "Ошибка 'unsupported file type' при загрузке PNG-аватара",
+        "requiresHuman": true
+      }
+    },
+    {
+      "id": 29,
+      "phrase": "Сервис периодически отдает timeout при поиске по клиентам.",
+      "expectedArea": "technical",
+      "ok": true,
+      "status": 201,
+      "latencyMs": 8673,
+      "response": {
+        "language": "ru",
+        "category": "technical",
+        "priority": "medium",
+        "requiresHuman": true,
+        "summary": "Техническая проблема: таймаут при поиске клиентов"
+      }
+    },
+    {
+      "id": 30,
+      "phrase": "После импорта данных часть записей продублировалась, а часть пропала.",
+      "expectedArea": "technical",
+      "ok": true,
+      "status": 201,
+      "latencyMs": 11349,
+      "response": {
+        "language": "ru",
+        "category": "technical",
+        "priority": "high",
+        "summary": "After data import, some records duplicated, others missing.",
+        "requiresHuman": true
+      }
+    },
+    {
+      "id": 31,
+      "phrase": "Здравствуйте, подскажите, где посмотреть историю обращений?",
+      "expectedArea": "other",
+      "ok": true,
+      "status": 201,
+      "latencyMs": 17811,
+      "response": {
+        "language": "ru",
+        "category": "account",
+        "priority": "medium",
+        "summary": "Как посмотреть историю обращений?",
+        "requiresHuman": false
+      }
+    },
+    {
+      "id": 32,
+      "phrase": "Хочу изменить название компании в профиле организации.",
+      "expectedArea": "other",
+      "ok": true,
+      "status": 201,
+      "latencyMs": 5679,
+      "response": {
+        "language": "ru",
+        "category": "account",
+        "priority": "medium",
+        "summary": "Change company name in organization profile",
+        "requiresHuman": false
+      }
+    },
+    {
+      "id": 33,
+      "phrase": "Можно ли перенести данные из старого аккаунта в новый?",
+      "expectedArea": "other",
+      "ok": true,
+      "status": 201,
+      "latencyMs": 37211,
+      "response": {
+        "language": "ru",
+        "category": "account",
+        "priority": "low",
+        "summary": "Запрос о переносе данных с старого аккаунта на новый",
+        "requiresHuman": true
+      }
+    },
+    {
+      "id": 34,
+      "phrase": "Подскажите, есть ли у вас партнерская программа для агентств?",
+      "expectedArea": "other",
+      "ok": true,
+      "status": 201,
+      "latencyMs": 7780,
+      "response": {
+        "language": "ru",
+        "category": "other",
+        "priority": "medium",
+        "summary": "Партнерская программа для агентств?",
+        "requiresHuman": true
+      }
+    },
+    {
+      "id": 35,
+      "phrase": "I need to change the workspace owner because the previous employee left the company.",
+      "expectedArea": "other",
+      "ok": true,
+      "status": 201,
+      "latencyMs": 16114,
+      "response": {
+        "language": "en",
+        "category": "account",
+        "priority": "medium",
+        "summary": "Change workspace owner after previous employee left",
+        "requiresHuman": false
+      }
+    },
+    {
+      "id": 36,
+      "phrase": "Как удалить мой аккаунт и все персональные данные?",
+      "expectedArea": "other",
+      "ok": true,
+      "status": 201,
+      "latencyMs": 6313,
+      "response": {
+        "language": "ru",
+        "category": "account",
+        "priority": "medium",
+        "summary": "Как удалить аккаунт и данные?",
+        "requiresHuman": false
+      }
+    },
+    {
+      "id": 37,
+      "phrase": "Нужна консультация по настройке команды из 15 сотрудников.",
+      "expectedArea": "other",
+      "ok": true,
+      "status": 201,
+      "latencyMs": 8502,
+      "response": {
+        "language": "ru",
+        "category": "technical",
+        "priority": "medium",
+        "summary": "Consultation needed for setting up a team of 15 employees",
+        "requiresHuman": true
+      }
+    },
+    {
+      "id": 38,
+      "phrase": "Где найти документацию по интеграции с CRM?",
+      "expectedArea": "other",
+      "ok": true,
+      "status": 201,
+      "latencyMs": 56387,
+      "response": {
+        "language": "ru",
+        "category": "technical",
+        "priority": "medium",
+        "summary": "Где найти документацию по интеграции с CRM?",
+        "requiresHuman": false
+      }
+    },
+    {
+      "id": 39,
+      "phrase": "Можно ли временно заморозить аккаунт на время отпуска?",
+      "expectedArea": "other",
+      "ok": true,
+      "status": 201,
+      "latencyMs": 20590,
+      "response": {
+        "language": "ru",
+        "category": "account",
+        "priority": "medium",
+        "summary": "Can account be temporarily frozen during vacation?",
+        "requiresHuman": false
+      }
+    },
+    {
+      "id": 40,
+      "phrase": "Please update our company address in billing and legal documents.",
+      "expectedArea": "other",
+      "ok": true,
+      "status": 201,
+      "latencyMs": 9323,
+      "response": {
+        "language": "en",
+        "category": "billing",
+        "priority": "medium",
+        "summary": "Update company address in billing and legal documents",
+        "requiresHuman": false
+      }
+    },
+    {
+      "id": 41,
+      "phrase": "Не могу войти, подписка почему-то не активна, а поддержка в чате не отвечает уже час.",
+      "expectedArea": "mixed: authentication, billing",
+      "ok": true,
+      "status": 201,
+      "latencyMs": 22478,
+      "response": {
+        "language": "ru",
+        "category": "account",
+        "priority": "high",
+        "summary": "Unable to log in: subscription inactive. Support chat not responding for an hour.",
+        "requiresHuman": true
+      }
+    },
+    {
+      "id": 42,
+      "phrase": "После оплаты тарифа API все равно возвращает 403, хотя доступ должен быть открыт.",
+      "expectedArea": "mixed: billing, technical",
+      "ok": true,
+      "status": 201,
+      "latencyMs": 9482,
+      "response": {
+        "language": "ru",
+        "category": "technical",
+        "priority": "high",
+        "summary": "API access still returns 403 after payment, access should be open",
+        "requiresHuman": true
+      }
+    },
+    {
+      "id": 43,
+      "phrase": "У нас не работает экспорт, а завтра сдача отчетности. Очень срочно.",
+      "expectedArea": "technical, high priority",
+      "ok": true,
+      "status": 201,
+      "latencyMs": 4755,
+      "response": {
+        "language": "ru",
+        "category": "technical",
+        "priority": "critical",
+        "summary": "Экспорт не работает, срочно нужен исправления до завтра",
+        "requiresHuman": true
+      }
+    },
+    {
+      "id": 44,
+      "phrase": "Клиент случайно удалил проект со всеми данными. Можно ли восстановить?",
+      "expectedArea": "technical, high priority",
+      "ok": true,
+      "status": 201,
+      "latencyMs": 21560,
+      "response": {
+        "language": "ru",
+        "category": "technical",
+        "priority": "high",
+        "summary": "Проект случайно удален, можно восстановить?",
+        "requiresHuman": true
+      }
+    },
+    {
+      "id": 45,
+      "phrase": "Someone changed the owner email and now our team is locked out of the workspace.",
+      "expectedArea": "authentication, high priority",
+      "ok": true,
+      "status": 201,
+      "latencyMs": 12331,
+      "response": {
+        "language": "en",
+        "category": "technical",
+        "priority": "critical",
+        "summary": "Owner email changed; team locked out of workspace.",
+        "requiresHuman": true
+      }
+    },
+    {
+      "id": 46,
+      "phrase": "Просто не работает.",
+      "expectedArea": "ambiguous",
+      "ok": true,
+      "status": 201,
+      "latencyMs": 8168,
+      "response": {
+        "language": "ru",
+        "category": "technical",
+        "priority": "medium",
+        "summary": "Technical issue: System not working",
+        "requiresHuman": true
+      }
+    },
+    {
+      "id": 47,
+      "phrase": "Ошибка.",
+      "expectedArea": "ambiguous",
+      "ok": true,
+      "status": 201,
+      "latencyMs": 6041,
+      "response": {
+        "language": "ru",
+        "category": "technical",
+        "priority": "medium",
+        "summary": "Technical error reported",
+        "requiresHuman": true
+      }
+    },
+    {
+      "id": 48,
+      "phrase": "Все пропало после обновления, ничего не открывается, помогите срочно.",
+      "expectedArea": "ambiguous, high priority",
+      "ok": false,
+      "status": 502,
+      "latencyMs": 6087,
+      "response": {
+        "message": "LLM structured output does not match JSON schema",
+        "errors": [
+          {
+            "instancePath": "",
+            "schemaPath": "#/required",
+            "keyword": "required",
+            "params": {
+              "missingProperty": "language"
+            },
+            "message": "must have required property 'language'"
+          },
+          {
+            "instancePath": "",
+            "schemaPath": "#/additionalProperties",
+            "keyword": "additionalProperties",
+            "params": {
+              "additionalProperty": "lang"
+            },
+            "message": "must NOT have additional properties"
+          }
+        ]
+      }
+    },
+    {
+      "id": 49,
+      "phrase": "Я оплатил, вошел, но данные не синхронизируются между вебом и мобильным приложением.",
+      "expectedArea": "mixed",
+      "ok": true,
+      "status": 201,
+      "latencyMs": 10340,
+      "response": {
+        "language": "ru",
+        "category": "technical",
+        "priority": "medium",
+        "summary": "Data not syncing between web and mobile app after payment and login",
+        "requiresHuman": true
+      }
+    },
+    {
+      "id": 50,
+      "phrase": "Bonjour, je ne peux pas acceder a mon compte apres avoir change mon numero de telephone.",
+      "expectedArea": "authentication, non-Russian",
+      "ok": true,
+      "status": 201,
+      "latencyMs": 7861,
+      "response": {
+        "language": "fr",
+        "category": "account",
+        "priority": "critical",
+        "summary": "Problème d'accès au compte après modification du numéro de téléphone",
+        "requiresHuman": true
+      }
+    }
+  ]
+}
